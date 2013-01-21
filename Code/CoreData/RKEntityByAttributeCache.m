@@ -103,6 +103,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:self.entity];
     [fetchRequest setResultType:NSManagedObjectIDResultType];
+    [fetchRequest setIncludesSubentities:NO];
 
     NSError *error = nil;
     NSArray *objectIDs = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
